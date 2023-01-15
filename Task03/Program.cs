@@ -34,5 +34,5 @@ else if (day == "7")
 }
 else
 {
-    Console.WriteLine("Ошибка ввода");
+    Console.WriteLine("Ошибка ввода! Попробуйте еще раз.");
 }
