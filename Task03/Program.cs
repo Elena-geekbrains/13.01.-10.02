@@ -32,7 +32,7 @@ else if (day == "7")
 {
     Console.WriteLine("Воскресенье");
 }
-else 
+else
 {
     Console.WriteLine("Ошибка ввода");
 }
