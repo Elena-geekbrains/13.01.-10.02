@@ -16,8 +16,8 @@ if (number > 0)
         if (count % 2 == 0)
         {
             Console.Write($"{count} ");
-            count++;
         }
+        count++;
     }
 }
 else
