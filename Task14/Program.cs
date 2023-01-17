@@ -8,11 +8,11 @@
 
 bool Multiplicity(int num)
 {
-    return (num % 7 == 0) && (num % 23 == 0);
+    return num % 7 == 0 && num % 23 == 0;
 }
 Console.WriteLine("Введите число: ");
 int number = Convert.ToInt32(Console.ReadLine());
 bool result = Multiplicity(number);
 
-if (result == true) Console.WriteLine("кратно");
+if (result) Console.WriteLine("кратно");
 else Console.WriteLine("Не кратно");
