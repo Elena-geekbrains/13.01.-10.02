@@ -1,4 +1,4 @@
-﻿/* Задача 13
+﻿/* Задача 13в
 Напишите программу, которая:
 1. выводит третью цифру заданного числа
 2. или сообщает, что третьей цифры нет. 
@@ -8,39 +8,26 @@
 32679 -> 6
 */
 
-int ThirtDigit(int num)
+int NumberOfDigit(int num)
 {
-    return num = num / 100 % 10;
+    int count;
+    count = 0;
+    while (num > 0)
+    {
+        num = num / 10;
+        count++;
+    }
+    return count;
 }
 
 Console.WriteLine("Введите число: ");
 int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
 
-if (number < 100) Console.WriteLine($"В введенном числе нет третьей цифры!");
-else if (number < 1000) number = number % 10;
-else number = ThirtDigit(number);
-Console.WriteLine($"Третья цифра введенного числа => {number}");
+int numberOfDigit = NumberOfDigit(number);
 
-/* Решение с использованием дополнительной переменной result:
-
-int ThirtDigit(int num)
+if (numberOfDigit < 3) Console.WriteLine($"В введенном числе нет третьей цифры!");
+else 
 {
-    return num = num / 100 % 10;
+    number = number / (int)Math.Pow(10, numberOfDigit-3) % 10;
+    Console.WriteLine($"Третья цифра введенного числа => {number}");
 }
-
-Console.WriteLine("Введите число: ");
-int number = Math.Abs(Convert.ToInt32(Console.ReadLine()));
-
-if (number < 100) Console.WriteLine($"В введенном числе нет третьей цифры!");
-else if (number < 1000)
-{
-    int result = number % 10;
-    Console.WriteLine($"Третья цифра введенного числа => {result}");
-}
-
-else
-{
-    int result = ThirtDigit(number);
-    Console.WriteLine($"Третья цифра введенного числа => {result}");
-}
-*/
