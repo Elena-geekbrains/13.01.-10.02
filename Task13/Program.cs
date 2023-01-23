@@ -28,6 +28,6 @@ int numberOfDigit = NumberOfDigit(number);
 if (numberOfDigit < 3) Console.WriteLine($"В введенном числе нет третьей цифры!");
 else 
 {
-    number = number / (int)Math.Pow(10, numberOfDigit-3) % 10;
+    number = number / (int) Math.Pow(10, numberOfDigit-3) % 10;
     Console.WriteLine($"Третья цифра введенного числа => {number}");
 }
