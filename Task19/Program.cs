@@ -22,36 +22,45 @@ if (number >= 10000 && number < 100000)
 }
 else Console.WriteLine("Ошибка ввода!");
 
-/* Решение 2 - для любрго натарального числа --------- еще требует доработки
 
-int NumReverse(int num)
+/*Решение 2 - для любрго натарального числа --------- еще требует доработки
+
+int NumberOfDigit(int num)
 {
-    int countDigit;
-    countDigit = 0;
+    int count;
+    count = 0;
     while (num > 0)
     {
         num = num / 10;
-        countDigit++;
+        count++;
     }
+    return count;
+}
+
+
+int NumReverse(int num)
+{
+    int countDigit = NumberOfDigit(num);
     int n = 0;
     int numReverse = 0;
     while (n < countDigit)
     {
-        int temp = Convert.ToInt32(num / Math.Pow(10, n) % 10 * Math.Pow(10, countDigit - (n + 1)));
+        int temp = Convert.ToInt32((num / Math.Pow(10, n) % 10) * Math.Pow(10, countDigit - (n + 1)));
         n++;
         numReverse = numReverse + temp;
+        Console.WriteLine($"{temp}");
     }
     return numReverse;
 }
 
-    Console.WriteLine("Введите пятизначное число: ");
-    int number = Convert.ToInt32(Console.ReadLine());
-    if (number >= 10000 && number < 100000)
-    {
-        int newNumber = NumReverse(number);
-        if (newNumber==number) Console.WriteLine($"Число {number} является палиндромом.");
-        else Console.WriteLine($"Число {number} не является палиндромом.");
-    }
-    else Console.WriteLine("Ошибка ввода!");
+Console.WriteLine("Введите пятизначное число: ");
+int number = Convert.ToInt32(Console.ReadLine());
+//if (number >= 10000 && number < 100000)
+//{
+int newNumber = NumReverse(number);
+Console.WriteLine($"{newNumber}");
+//if (newNumber==number) Console.WriteLine($"Число {number} является палиндромом.");
+//else Console.WriteLine($"Число {number} не является палиндромом.");
+//}
+//else Console.WriteLine("Ошибка ввода!");
 */
-
